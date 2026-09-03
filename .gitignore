@@ -1,10 +1,9 @@
-# R-Standard
+# R
 .Rhistory
 .Rapp.history
 .RData
 .Ruserdata
 .Rproj.user/
-*.Rproj
 
 # Secrets — niemals committen
 .Renviron
