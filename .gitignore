@@ -1,0 +1,17 @@
+# R-Standard
+.Rhistory
+.Rapp.history
+.RData
+.Ruserdata
+.Rproj.user/
+*.Rproj
+
+# Secrets — niemals committen
+.Renviron
+.env
+*.env
+**/.env
+**/.Renviron
+
+# macOS
+.DS_Store
