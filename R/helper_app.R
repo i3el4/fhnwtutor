@@ -26,7 +26,6 @@ helper_app <- function() {
   ordered <- unique(c(intersect(names(labels), helpers), helpers))
 
   ui <- miniUI::miniPage(
-    miniUI::gadgetTitleBar("Business Analytics Tutor", right = miniUI::miniTitleBarCancelButton()),
     miniUI::miniContentPanel(
       shiny::div(
         style = "display: flex; flex-direction: column; gap: 8px;",
@@ -57,12 +56,9 @@ helper_app <- function() {
         )
       })
     })
-    shiny::observeEvent(input$cancel, {
-      shiny::stopApp(returnValue = NULL)
-    })
   }
 
-  viewer <- shiny::dialogViewer("Business Analytics Tutor", width = 320, height = 320)
+  viewer <- shiny::dialogViewer("Business Analytics Tutor", width = 280, height = 280)
   shiny::runGadget(ui, server, viewer = viewer)
 }
 
