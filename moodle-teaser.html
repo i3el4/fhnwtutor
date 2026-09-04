@@ -1,0 +1,78 @@
+<div class="mb-4 p-4" style="background-color:#f5f3f9;border:1px solid #e3e3e6;">
+  <p class="mb-2"><span class="badge" style="background-color:#6d5b97;color:#ffffff;letter-spacing:0.06em;">FREIWILLIGES ANGEBOT</span></p>
+  <h2 class="mb-3">Business Analytics Tutor in RStudio</h2>
+  <p class="lead mb-4">Statt Fragen in einem Chatfenster zu stellen und Code hin und her zu kopieren, arbeiten Sie direkt im Editor: Sie markieren eine Stelle in Ihrem Skript, dr&uuml;cken ein Tastenk&uuml;rzel und w&auml;hlen mit einem Knopf, was passieren soll. Das Ergebnis erscheint an Ort und Stelle. Das Add-in stellt daf&uuml;r f&uuml;nf Assistenten bereit, die auf die Arbeitsweise in diesem Modul zugeschnitten sind. Paketname in R: <code>fhnwtutor</code>.</p>
+  <div class="p-3" style="background-color:#ffffff;border:1px solid #e3e3e6;border-left:4px solid #6d5b97;"><strong>Installation in einer Zeile</strong><br>
+  <span style="color:#5a5a5a;">In der RStudio-Console eingeben:</span>
+  <pre style="margin:0.75rem 0 0.5rem 0;padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">install.packages("fhnwtutor", repos = c("https://i3el4.r-universe.dev", getOption("repos")))</pre>
+  <span style="color:#5a5a5a;">Anschliessend brauchen Sie noch einen eigenen, kostenlosen API-Key. Die vollst&auml;ndige Anleitung dauert etwa 15 Minuten. Ein GitHub-Konto ist nicht n&ouml;tig.</span></div>
+  <div class="p-3 mt-3" style="background-color:#ffffff;border:1px solid #e3e3e6;border-left:4px solid #8c8c8c;"><strong>Was Sie daf&uuml;r brauchen</strong><br><span style="color:#5a5a5a;">R ab Version 4.3, RStudio Desktop und einen eigenen kostenlosen Gemini-API-Key von Google. Jede Person richtet einen eigenen Key ein; Keys werden nicht weitergegeben.</span></div>
+  <p class="mb-0 mt-3" style="color:#5a5a5a;">Datenschutz: Der kostenlose Gemini-Zugang (Free Tier) &uuml;bermittelt den markierten Text an Google. Google kann diese Inhalte zur Produktverbesserung verwenden. Schicken Sie deshalb keine vertraulichen oder personenbezogenen Daten durch das Add-in &mdash; keine Matrikelnummern, keine Klausurdaten, keine Datens&auml;tze mit Personenbezug. F&uuml;r &Uuml;bungsdaten und eigenen Code ohne Personenbezug ist es unproblematisch.</p>
+</div>
+<h4 class="mb-3">Welche Assistenten gibt es?</h4>
+<div class="row mb-4">
+  <div class="col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <div style="font-size:2.2rem;line-height:1;margin-right:15px;">⚙</div>
+          <h6 class="card-title mb-0">Umsetzen</h6>
+        </div>
+        <p class="card-text" style="color:#5a5a5a;font-size:0.95rem;">Markieren Sie eine Frage in normalem Deutsch &mdash; etwa wie Sie eine Excel-Datei einlesen &mdash; und der Assistent ersetzt sie durch R-Code. Pfade, die Sie nicht angegeben haben, bleiben Platzhalter.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <div style="font-size:2.2rem;line-height:1;margin-right:15px;">🔍</div>
+          <h6 class="card-title mb-0">Erkl&auml;ren</h6>
+        </div>
+        <p class="card-text" style="color:#5a5a5a;font-size:0.95rem;">Erkl&auml;rt eine Fehlermeldung oder einen Codeblock ohne Informatik-Jargon: was passiert und was das praktisch bedeutet. Die Erkl&auml;rung erscheint als Kommentar unter der markierten Stelle. Der Originalcode bleibt stehen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <div style="font-size:2.2rem;line-height:1;margin-right:15px;">✍</div>
+          <h6 class="card-title mb-0">Kommentieren</h6>
+        </div>
+        <p class="card-text" style="color:#5a5a5a;font-size:0.95rem;">Erg&auml;nzt vorhandenen Code um deutsche Kommentare. Der Fokus liegt auf dem Was und Warum eines Schritts, nicht auf der Syntax. Der Code selbst wird nicht umgeschrieben.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <div style="font-size:2.2rem;line-height:1;margin-right:15px;">🧭</div>
+          <h6 class="card-title mb-0">Bereinigen</h6>
+        </div>
+        <p class="card-text" style="color:#5a5a5a;font-size:0.95rem;">&Uuml;berf&uuml;hrt Base-R-Code in lesbaren tidyverse-Stil mit der Pipe <code>|&gt;</code>. N&uuml;tzlich, wenn Sie Code aus dem Internet &uuml;bernommen haben und ihn an die Schreibweise aus dem Unterricht angleichen wollen.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-6 col-lg-4 mb-3">
+    <div class="card h-100">
+      <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+          <div style="font-size:2.2rem;line-height:1;margin-right:15px;">🔗</div>
+          <h6 class="card-title mb-0">Erweitern</h6>
+        </div>
+        <p class="card-text" style="color:#5a5a5a;font-size:0.95rem;">Schl&auml;gt zu markiertem Code einen n&auml;chsten plausiblen Analyseschritt vor. Der Vorschlag erscheint unter der Auswahl; der markierte Code bleibt stehen.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="card mb-4" style="background-color:#f5f3f9;">
+  <div class="card-body">
+    <h5 class="card-title mb-2">Anleitung Schritt f&uuml;r Schritt</h5>
+    <p class="mb-2"><span class="badge" style="background-color:#8c8c8c;color:#ffffff;">kein Support</span></p>
+    <p class="mb-3">Die Anleitung f&uuml;hrt durch Installation, API-Key und Tastenk&uuml;rzel, f&uuml;r Windows und macOS. Am Ende steht eine Tabelle mit den h&auml;ufigsten Stolpersteinen.<br>
+    <span style="font-size:0.9em;color:#5a5a5a;"><em>Das Add-in ist eine private Bastelei und kein Angebot der FHNW. Es l&auml;uft auf meinem Rechner stabil; auf Ihrem k&ouml;nnen H&uuml;rden auftreten. Dazu gibt es keinen Support. Die Nutzung ist freiwillig, ohne Gew&auml;hr f&uuml;r Funktion oder Verf&uuml;gbarkeit.</em></span></p>
+    <a class="btn" style="background-color:#e2001a;color:#ffffff;" href="https://github.com/i3el4/fhnwtutor/blob/main/ANLEITUNG-STUDIERENDE.md">Anleitung &ouml;ffnen</a>
+  </div>
+</div>

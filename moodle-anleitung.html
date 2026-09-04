@@ -1,0 +1,117 @@
+<div class="mb-4 p-4" style="background-color:#f5f3f9;border:1px solid #e3e3e6;">
+  <p class="mb-2"><span class="badge" style="background-color:#6d5b97;color:#ffffff;letter-spacing:0.06em;">FREIWILLIGES ANGEBOT</span></p>
+  <h2 class="mb-3">Business Analytics Tutor &mdash; Einrichtung</h2>
+  <p class="mb-2">Freiwilliges Angebot f&uuml;r die Lehrveranstaltung Business Analytics. Das Add-in ist selbst gebaut, kein Bestandteil des Unterrichts. Es gibt keinen Support und keine Gew&auml;hr f&uuml;r Funktion oder Verf&uuml;gbarkeit.</p>
+  <p class="mb-2">Der Gemini Free Tier &uuml;bermittelt den markierten Text an Google. Google kann diese Inhalte zur Produktverbesserung verwenden. Deshalb keine vertraulichen oder personenbezogenen Daten durchschicken: keine Matrikelnummern, keine Klausurdaten, keine Datens&auml;tze mit Personenbezug.</p>
+  <p class="mb-0">Paketname in R: <code>fhnwtutor</code>.</p>
+</div>
+
+<h4>1. R und RStudio</h4>
+<ol>
+  <li><a href="https://cran.r-project.org">R</a> installieren, Version 4.3 oder neuer.</li>
+  <li>Danach <a href="https://posit.co/download/rstudio-desktop/">RStudio Desktop</a> installieren.</li>
+  <li>RStudio &ouml;ffnen. In der Console muss eine Zeile mit <code>R version 4.3</code> oder h&ouml;her stehen.</li>
+</ol>
+
+<h4>2. Paket installieren</h4>
+<p>In der RStudio-Console:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">install.packages("fhnwtutor", repos = c("https://i3el4.r-universe.dev", getOption("repos")))</pre>
+<p>Kein GitHub-Konto, kein Token. Die Abh&auml;ngigkeiten <code>chores</code> und <code>ellmer</code> kommen mit.</p>
+<p>Zus&auml;tzlich, nur zum &Ouml;ffnen der Konfigurationsdateien:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">install.packages("usethis")</pre>
+
+<h4>3. Eigenen Gemini-API-Key holen</h4>
+<p>Jede Person braucht einen eigenen Key. Keys nicht teilen, nicht per Mail oder Chat schicken, nicht ins Git-Repo legen.</p>
+<ol>
+  <li>Unter <a href="https://aistudio.google.com/apikey">Google AI Studio</a> mit einem Google-Konto anmelden.</li>
+  <li>Einen API-Key erzeugen und kopieren.</li>
+</ol>
+
+<h4>4. Key eintragen und RStudio neu starten</h4>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">usethis::edit_r_environ()</pre>
+<p>Eine Zeile einf&uuml;gen. Den Key direkt hinter das Gleichheitszeichen setzen, ohne Anf&uuml;hrungszeichen und ohne Leerzeichen:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;">GEMINI_API_KEY=</pre>
+<p>Speichern, Datei schliessen. RStudio vollst&auml;ndig beenden und wieder &ouml;ffnen. Session &rarr; Restart R reicht nicht.</p>
+<p>Zur Kontrolle:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">nzchar(Sys.getenv("GEMINI_API_KEY"))</pre>
+<p>Erwartung: <code>TRUE</code>.</p>
+
+<h4>5. Konfiguration ins <code>.Rprofile</code></h4>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">usethis::edit_r_profile()</pre>
+<p>Diese Zeilen einf&uuml;gen oder an bestehenden Inhalt anh&auml;ngen:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;"># Business Analytics Tutor – Gemini Free Tier
+if (interactive()) {
+  options(
+    chores.chat = ellmer::chat_google_gemini(
+      model = "gemini-3.5-flash",
+      api_args = list(
+        generationConfig = list(
+          thinkingConfig = list(thinkingLevel = "minimal")
+        )
+      )
+    )
+  )
+  library(fhnwtutor)
+}</pre>
+<p>Speichern, Datei schliessen. RStudio erneut vollst&auml;ndig neu starten.</p>
+<p>Zur Kontrolle:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">"fhnwtutor" %in% loadedNamespaces()</pre>
+<p>Erwartung: <code>TRUE</code>.</p>
+
+<h4>6. Tastenk&uuml;rzel</h4>
+<ol>
+  <li>Tools &rarr; Modify Keyboard Shortcuts&hellip;</li>
+  <li>Nach <code>Chores</code> suchen.</li>
+  <li>Zuweisen:
+    <ul>
+      <li>Windows: <code>Ctrl+Alt+C</code></li>
+      <li>macOS: <code>Ctrl+Cmd+C</code></li>
+    </ul>
+  </li>
+</ol>
+<p>Nach dem Tastenk&uuml;rzel erscheinen f&uuml;nf Kn&ouml;pfe, keine Auswahlliste: Kommentieren, Erweitern, Erkl&auml;ren, Bereinigen, Umsetzen.</p>
+
+<h4>7. Funktionstest</h4>
+<p>Neues R-Skript, diese Zeile markieren:</p>
+<pre style="padding:0.75rem;background-color:#f8f8f8;border:1px solid #e3e3e6;white-space:pre-wrap;">wie lade ich meine excel datei hier hinein, damit ich damit arbeiten kann?</pre>
+<p>Tastenk&uuml;rzel dr&uuml;cken, <strong>Umsetzen</strong> anklicken. Die Zeile sollte durch R-Code mit <code>readxl</code> ersetzt werden.</p>
+
+<h4>Wenn etwas hakt</h4>
+<table class="table table-sm table-bordered">
+  <thead>
+    <tr>
+      <th>Symptom</th>
+      <th>Typische Ursache</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>package &lsquo;fhnwtutor&rsquo; is not available</code></td>
+      <td>r-universe hat das Paket noch nicht gebaut, Tippfehler in der <code>repos</code>-URL, oder R &auml;lter als 4.3</td>
+    </tr>
+    <tr>
+      <td><code>"fhnwtutor" %in% loadedNamespaces()</code> ist <code>FALSE</code></td>
+      <td><code>.Rprofile</code> ohne <code>library(fhnwtutor)</code>, oder RStudio nicht vollst&auml;ndig neu gestartet</td>
+    </tr>
+    <tr>
+      <td>Fehlermeldung zu API oder authentication</td>
+      <td>Key fehlt, Tippfehler in <code>.Renviron</code>, Leerzeichen um das <code>=</code>, oder Neustart vergessen</td>
+    </tr>
+    <tr>
+      <td><code>nzchar(Sys.getenv("GEMINI_API_KEY"))</code> ist <code>FALSE</code></td>
+      <td>Zeile steht nicht in <code>.Renviron</code>, oder RStudio nach dem Speichern nicht komplett neu gestartet</td>
+    </tr>
+    <tr>
+      <td>Tastenk&uuml;rzel macht nichts</td>
+      <td>Anderes K&uuml;rzel belegt dieselbe Kombination; in den Shortcuts erneut <code>Chores</code> suchen</td>
+    </tr>
+    <tr>
+      <td>Keine Kn&ouml;pfe Umsetzen / Erkl&auml;ren</td>
+      <td><code>library(fhnwtutor)</code> wurde in dieser Session nicht ausgef&uuml;hrt</td>
+    </tr>
+    <tr>
+      <td>Quota- oder Rate-Limit-Meldung von Google</td>
+      <td>Free-Tier-Limit erreicht; sp&auml;ter erneut versuchen, eigenen Key verwenden</td>
+    </tr>
+  </tbody>
+</table>

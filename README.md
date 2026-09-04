@@ -18,4 +18,6 @@ Freiwilliges Angebot. Kein Bestandteil des Unterrichts, kein Support, keine Gew√
 install.packages("fhnwtutor", repos = c("https://i3el4.r-universe.dev", getOption("repos")))
 ```
 
+Schritt-f√ºr-Schritt: [ANLEITUNG-STUDIERENDE.md](https://github.com/i3el4/fhnwtutor/blob/main/ANLEITUNG-STUDIERENDE.md).
+
 Lizenz: MIT.
