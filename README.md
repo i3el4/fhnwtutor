@@ -12,7 +12,7 @@ Freiwilliges Angebot. Kein Bestandteil des Unterrichts, kein Support, keine Gew�
 - [ANLEITUNG-STUDIERENDE.md](ANLEITUNG-STUDIERENDE.md) — Installation über r-universe, ohne GitHub-Konto
 - [ANLEITUNG.md](ANLEITUNG.md) — Einrichtung über das GitHub-Repo (Kolleginnen)
 
-## Installation (nachdem r-universe gebaut hat)
+## Installation
 
 ```r
 install.packages("fhnwtutor", repos = c("https://i3el4.r-universe.dev", getOption("repos")))

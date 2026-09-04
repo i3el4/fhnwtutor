@@ -1,0 +1,4 @@
+Name: Business Analytics Tutor
+Description: Assistenten für markierten Code oder eine Anweisung
+Binding: run_tutor_addin
+Interactive: true

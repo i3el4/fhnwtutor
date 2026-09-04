@@ -5,6 +5,9 @@
   hook_helper_list()
   hook_helper_app()
   hide_package_helpers()
+  if (interactive()) {
+    configure_gemini()
+  }
 }
 
 # nocov end
