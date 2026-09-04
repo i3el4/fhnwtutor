@@ -7,4 +7,4 @@ Description: Registriert persönliche chores-Prompts für RStudio beim
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.3.0)
-Imports: chores
+Imports: chores, miniUI, shiny
