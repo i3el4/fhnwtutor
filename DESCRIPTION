@@ -1,10 +1,14 @@
 Package: fhnwtutor
-Title: Chores-Helfer für Business Analytics an der FHNW
+Title: Business Analytics Tutor
 Version: 0.0.1
 Authors@R: person("Bela", "Ackermann", email = "bela.ackermann@fhnw.ch", role = c("aut", "cre"))
-Description: Registriert persönliche chores-Prompts für RStudio beim
-    Arbeiten und Vorführen in Business Analytics.
+Description: RStudio-Add-in mit chores-Prompts für Business Analytics:
+    Code erklären, kommentieren, bereinigen, erweitern oder aus einer
+    Anweisung erzeugen.
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.3.0)
 Imports: chores, miniUI, shiny
+URL: https://github.com/i3el4/fhnwtutor,
+    https://i3el4.r-universe.dev/fhnwtutor
+BugReports: https://github.com/i3el4/fhnwtutor/issues

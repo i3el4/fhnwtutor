@@ -1,11 +1,21 @@
-# fhnwtutor
+# Business Analytics Tutor
 
-Persönliches R-Paket: chores-Prompts für Business Analytics an der FHNW.
+RStudio-Add-in für die Lehrveranstaltung Business Analytics an der FHNW.
+Paketname in R: `fhnwtutor`.
 
-Basiert auf [chores](https://simonpcouch.github.io/chores/) + [ellmer](https://ellmer.tidyverse.org).
-Modell: Google Gemini Free Tier (`GEMINI_API_KEY` in `~/.Renviron`).
+Markierten Code oder eine kurze Anweisung mit einem Tastenkürzel an fünf Assistenten übergeben: Erklären, Kommentieren, Bereinigen, Erweitern, Umsetzen. Dahinter liegen [chores](https://simonpcouch.github.io/chores/) und [ellmer](https://ellmer.tidyverse.org), Modell Google Gemini Free Tier.
 
-Prompts liegen in `inst/prompts/` und werden beim Laden des Pakets registriert.
-Konfiguration (Chat-Objekt) bleibt in `~/.Rprofile`.
+Freiwilliges Angebot. Kein Bestandteil des Unterrichts, kein Support, keine Gewähr.
 
-Schritt-für-Schritt für Windows: [ANLEITUNG.md](ANLEITUNG.md).
+## Anleitungen
+
+- [ANLEITUNG-STUDIERENDE.md](ANLEITUNG-STUDIERENDE.md) — Installation über r-universe, ohne GitHub-Konto
+- [ANLEITUNG.md](ANLEITUNG.md) — Einrichtung über das GitHub-Repo (Kolleginnen)
+
+## Installation (nachdem r-universe gebaut hat)
+
+```r
+install.packages("fhnwtutor", repos = c("https://i3el4.r-universe.dev", getOption("repos")))
+```
+
+Lizenz: MIT.
