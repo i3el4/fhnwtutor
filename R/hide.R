@@ -1,6 +1,6 @@
 hide_package_helpers <- function() {
-  remove_helper <- getFromNamespace(".helper_remove", "chores")
-  listed <- getFromNamespace("list_helpers", "chores")()
+  remove_helper <- utils::getFromNamespace(".helper_remove", "chores")
+  listed <- utils::getFromNamespace("list_helpers", "chores")()
   for (chore in c("cli", "roxygen", "testthat")) {
     if (chore %in% listed) {
       remove_helper(chore)

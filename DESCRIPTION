@@ -8,7 +8,7 @@ Description: RStudio-Add-in mit chores-Prompts für Business Analytics:
 License: MIT + file LICENSE
 Encoding: UTF-8
 Depends: R (>= 4.3.0)
-Imports: chores, ellmer, miniUI, shiny
+Imports: chores, ellmer, miniUI, shiny, utils
 URL: https://github.com/i3el4/fhnwtutor,
     https://i3el4.r-universe.dev/fhnwtutor
 BugReports: https://github.com/i3el4/fhnwtutor/issues

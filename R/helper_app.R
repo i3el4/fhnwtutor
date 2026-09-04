@@ -20,7 +20,7 @@ helper_tooltips <- function() {
 
 helper_app <- function() {
   hide_package_helpers()
-  helpers <- getFromNamespace("list_helpers", "chores")()
+  helpers <- utils::getFromNamespace("list_helpers", "chores")()
   labels <- helper_labels()
   tips <- helper_tooltips()
   ordered <- unique(c(intersect(names(labels), helpers), helpers))
